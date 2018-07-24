@@ -28,7 +28,7 @@ public struct GithubRequest {
     }
     
     // Factory method to make url for a particular API
-    private func urlForSearchAPI(_ api: SearchAPI, withParams params: [String: String?]) -> URL? {
+    func urlForSearchAPI(_ api: SearchAPI, withParams params: [String: String?]) -> URL? {
         let url = URL(string: SearchPath.base)!.appendingPathComponent(api.rawValue)
         return url.withQueries(params)
     }
