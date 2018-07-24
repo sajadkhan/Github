@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct GithubOwner: Codable {
+public struct GithubOwner: Codable {
     let id: Int
     let name: String
     let avatarURL: String
@@ -24,7 +24,7 @@ struct GithubOwner: Codable {
 }
 
 extension GithubOwner: SearchResultItem {
-    var title: String {
+    public var title: String {
         return name
     }
 }

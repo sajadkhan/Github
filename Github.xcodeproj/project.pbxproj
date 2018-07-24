@@ -79,9 +79,9 @@
 		06E2AD652107139F00101985 /* Github */ = {
 			isa = PBXGroup;
 			children = (
+				06E2AD7E2107143500101985 /* GithubQueryResult.swift */,
 				06E2AD7D2107143500101985 /* GithubCode.swift */,
 				06E2AD812107143500101985 /* GithubOwner.swift */,
-				06E2AD7E2107143500101985 /* GithubQueryResult.swift */,
 				06E2AD7F2107143500101985 /* GithubRepository.swift */,
 				06E2AD802107143500101985 /* GithubRequest.swift */,
 				06E2AD672107139F00101985 /* Info.plist */,

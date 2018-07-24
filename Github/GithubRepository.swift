@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GithubRepository: Codable {
+public struct GithubRepository: Codable {
     
     let id: Int
     let name: String
@@ -33,10 +33,10 @@ struct GithubRepository: Codable {
 }
 
 extension GithubRepository: SearchResultItem {
-    var title: String {
+    public var title: String {
         return name
     }
-    var subtitle: String {
+    public var subtitle: String {
         return fullName
     }
 }

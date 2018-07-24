@@ -8,20 +8,20 @@
 
 import Foundation
 
-protocol SearchResultItem {
+public protocol SearchResultItem {
     var title: String { get }
     var subtitle: String { get }
 }
 
 extension SearchResultItem {
-    var subtitle: String {
+    public var subtitle: String {
         return ""
     }
 }
 
-struct GithubRequest {
+public struct GithubRequest {
     // Supported Search APIs
-    enum SearchAPI: String {
+    public enum SearchAPI: String {
         case repo = "/search/repositories"
         case users = "/search/users"
         case code = "/search/code"
@@ -47,7 +47,7 @@ struct GithubRequest {
     }
     
     // Request Search API for repos, users and others, see SearchAPI enum against a given searchText. Sort and Order parameters are not mendatory
-    func requestSearchAPI(for api: SearchAPI,
+    public func requestSearchAPI(for api: SearchAPI,
                           searchText text: String,
                           sort: String?,
                           order: String?,
@@ -90,12 +90,12 @@ struct GithubRequest {
 
 
     // Search Paths
-    struct SearchPath {
+    private struct SearchPath {
         static let base = "https://api.github.com"
     }
     
     // Keys in Github Request/Response
-    struct GithubKeys {
+    private struct GithubKeys {
         // Search Repo keys
         static let query = "q"
         static let sort  = "sort"

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct GithubCode: Codable {
+public struct GithubCode: Codable {
     let name: String
     let repository: GithubRepository
     let path: String
@@ -18,10 +18,10 @@ struct GithubCode: Codable {
 }
 
 extension GithubCode: SearchResultItem {
-    var title: String {
+    public var title: String {
         return name
     }
-    var subtitle: String {
+    public var subtitle: String {
         return path
     }
 }
