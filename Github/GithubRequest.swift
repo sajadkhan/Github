@@ -41,6 +41,8 @@ public struct GithubRequest {
             } else if let data = data,
                 let result = GithubQueryResult(data: data) {
                 completion(result, error)
+            } else {
+                completion(nil, error)
             }
         }
         task.resume()

@@ -73,6 +73,49 @@ class GithubTests: XCTestCase {
         
     }
     
+    // Test for fetching data using github search api with empty text
+    
+    func testEmptyTextSearch() {
+        // text to search
+        let text = ""
+        
+        let expectation = XCTestExpectation(description: "github api expectation")
+        
+        // make request
+        githubRequest?.requestSearchAPI(for: .repo,
+                                        searchText: text,
+                                        sort: nil,
+                                        order: nil,
+                                        completion: { items in
+                                            XCTAssertNil(items, "Results for repository search api return more than one element for empty text")
+                                            expectation.fulfill()
+        })
+        
+        // wait for expectation to fullfil
+        wait(for: [expectation], timeout: 20.0)
+    }
+    
+    // Test for fetching data using github search api with result expected text
+    func testSomeResultExpectedText() {
+        // text to search
+        let text = "Github"
+        
+        let expectation = XCTestExpectation(description: "github api expectation")
+        
+        // make request
+        githubRequest?.requestSearchAPI(for: .repo,
+                                        searchText: text,
+                                        sort: nil,
+                                        order: nil,
+                                        completion: { items in
+                                            XCTAssert(items != nil && (items?.count)! > 0, "No result for \"github\" using Search Repository API.")
+                                            
+                                            expectation.fulfill()
+        })
+        
+        // wait for expectation to fullfil
+        wait(for: [expectation], timeout: 20.0)
+    }
     
     
 }
