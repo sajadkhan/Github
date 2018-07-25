@@ -10,15 +10,15 @@ import Foundation
 
 public struct GithubRepository: Codable {
     
-    let id: Int
-    let name: String
-    let fullName: String
-    let owner: GithubOwner
-    let isPrivate: Bool
-    let description: String?
-    let createdAt: String?
-    let size: Int?
-    let language: String?
+    public let id: Int
+    public let name: String
+    public let fullName: String
+    public let owner: GithubOwner
+    public let isPrivate: Bool
+    public let description: String?
+    public let createdAt: String?
+    public let size: Int?
+    public let language: String?
 
     enum CodingKeys: String, CodingKey {
         case fullName = "full_name"
@@ -42,7 +42,7 @@ extension GithubRepository: SearchResultItem {
 }
 
 extension GithubRepository {
-    var createdDate: Date? {
+    public var createdDate: Date? {
         if let dateString = createdAt {
             let formatter = DateFormatter()
             formatter.dateStyle = .short

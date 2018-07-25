@@ -8,9 +8,9 @@
 
 import Foundation
 public struct GithubCode: Codable {
-    let name: String
-    let repository: GithubRepository
-    let path: String
+    public let name: String
+    public let repository: GithubRepository
+    public let path: String
     
     static func decodeDataWithArrayType(data: Data) -> [GithubCode]? {
         return try? JSONDecoder().decode([GithubCode].self, from: data)

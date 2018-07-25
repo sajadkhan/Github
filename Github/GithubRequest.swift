@@ -20,6 +20,12 @@ extension SearchResultItem {
 }
 
 public struct GithubRequest {
+    
+    // public intializer
+    
+    public init() {
+        
+    }
     // Supported Search APIs
     public enum SearchAPI: String {
         case repo = "/search/repositories"

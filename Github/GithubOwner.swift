@@ -8,9 +8,9 @@
 
 import Foundation
 public struct GithubOwner: Codable {
-    let id: Int
-    let name: String
-    let avatarURL: String
+    public let id: Int
+    public let name: String
+    public let avatarURL: String
     
     enum CodingKeys: String, CodingKey {
         case name = "login"
